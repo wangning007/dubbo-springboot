@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.inspur.domain.model"/>
+    </typeAliases>
+    
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+                <property name="url" value="jdbc:oracle:thin:@10.110.2.61:1521/irms"/>
+                <property name="username" value="wx2_simple"/>
+                <property name="password" value="wx2_simple"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mapper/RolePrivilegeMapper.xml"></mapper>
+        <mapper resource="mapper/SysPrivilegeMapper.xml"></mapper>
+        <mapper resource="mapper/SysRoleMapper.xml"></mapper>
+        <mapper resource="mapper/SysUserMapper.xml"></mapper>
+        <mapper resource="mapper/UserRoleMapper.xml"></mapper>
+    </mappers>
+    
+</configuration>

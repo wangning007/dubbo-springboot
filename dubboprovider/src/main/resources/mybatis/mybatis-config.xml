@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ http://www.inspur.com
+  ~ Copyright (c) 2019 . 软件版权归浪潮软件集团-天元通信信息系统有限公司所有
+  ~
+  -->
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 配置关闭缓存 -->
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="useGeneratedKeys" value="true"/>
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <setting name="defaultStatementTimeout" value="600"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="callSettersOnNulls" value="true"/>
+        <setting name="returnInstanceForEmptyRow" value="true"/>
+    </settings>
+
+    <!--<typeAliases>-->
+        <!--<typeAlias type="com.inspur.softwaregroup.communication.nrms.file.dao.BpmAttachmentMapper" alias="bpmAttachment"/>-->
+    <!--</typeAliases>-->
+
+
+    <mappers>
+        <mapper resource="mybatis/UserMapper.xml"/>
+    </mappers>
+</configuration>

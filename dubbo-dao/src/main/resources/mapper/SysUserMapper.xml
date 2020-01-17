@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inspur.mybatis.mapper.SysUserMapper">
+
+    <resultMap id="userMap" type="com.inspur.domain.model.User">
+        <id property="intId" column="int_id"/>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <result property="email" column="email"></result>
+        <result property="info" column="info"></result>
+        <result property="headImg" column="head_img"></result>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"></result>
+    </resultMap>
+
+    <select id="findUserById" resultMap="userMap">
+        select * from sta_user where int_id = #{intId}
+    </select>
+
+    <select id="findAll" resultType="com.inspur.domain.model.User">
+        select int_id,username,address,password,email,info,head_img headImg,create_time createTime
+        from sta_user
+    </select>
+
+    <select id="findRolesByUserId" resultType="com.inspur.domain.model.SysRole">
+        select b.int_id intId,b.role_name roleName,b.enabled,b.creator,b.create_time createTime
+        from sta_user a,sta_role b,sta_user_role c
+        where a.int_id = c.user_id and c.role_id = b.int_id
+    </select>
+
+
+</mapper>
