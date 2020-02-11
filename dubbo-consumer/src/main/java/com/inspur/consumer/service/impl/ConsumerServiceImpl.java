@@ -18,13 +18,13 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     @Override
     public String invoke(String name) {
-        dubboService.sayHello();
-        return null;
+        return dubboService.sayHello();
     }
 
     @Override
     public User findUser(Long int_id) {
-        return dubboService.getUserById(int_id);
+        //return dubboService.getUserById(int_id);
+        return null;
     }
 
 

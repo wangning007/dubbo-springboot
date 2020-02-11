@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author wang.ning
  * @create 2020-01-07 16:58
  */
-@EnableDubbo(scanBasePackages = "com.inspur.consumer")
+@EnableDubbo(scanBasePackages = "com.inspur.*")
 @SpringBootApplication
 public class WebApplication {
 

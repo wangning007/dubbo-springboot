@@ -3,6 +3,7 @@ package com.inspur.domain.model;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author wang.ning
@@ -16,5 +17,15 @@ public class User implements Serializable {
     private String username;
 
     private String address;
+
+    private String password;
+
+    private String email;
+
+    private String info;
+
+    private Date create_time;
+
+    private byte[] head_img;
 
 }
